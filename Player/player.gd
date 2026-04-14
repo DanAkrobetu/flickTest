@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 const maxSpeed: float = 500
-const maxJumpHeight: float = 500
+const maxJumpHeight: float = 1000
 
-const upwardsGravityMultiplier: float = 1.5
-const donwardsGravityMultiplier: float = 1.5
+@export var upwardsGravityMultiplier: float = 2.5
+@export var donwardsGravityMultiplier: float = 1.65
 
 var doubleJump: bool = false
 
@@ -18,14 +18,14 @@ func get_input():
 	
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		#print("jump")
-		velocity.y = -(maxJumpHeight * upwardsGravityMultiplier)
+		velocity.y = -(maxJumpHeight)
 	elif !is_on_floor() and !doubleJump and Input.is_action_just_pressed("jump"):
-		velocity.y = maxJumpHeight * upwardsGravityMultiplier
+		velocity.y = -(maxJumpHeight)
 		doubleJump = true
 		#print("doube jump")
 	
 	#print("InputDir:" + str(inputDir))
-	print("velocity.y:" + str(velocity.y))
+	#print("velocity.y:" + str(velocity.y))
 	#print(sign(velocity.y))
 	
 func detectMovingDown() -> bool:
