@@ -8,8 +8,7 @@ const maxJumpHeight: float = 1000
 
 var doubleJump: bool = false
 
-<<<<<<< Updated upstream
-=======
+
 var objectVelocityX
 var objectVelocityY
 
@@ -21,7 +20,7 @@ var isHoldingObject: bool = false
 var object: RigidBody2D
 
 signal drop_item
->>>>>>> Stashed changes
+
 
 func _ready() -> void:
 	velocity = Vector2.ZERO
