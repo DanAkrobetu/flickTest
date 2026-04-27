@@ -1,49 +1,35 @@
 [gd_scene format=3 uid="uid://b3m83mtqrxyoe"]
 
-[ext_resource type="PackedScene" uid="uid://4v88fg330m1t" path="res://Player/player.tscn" id="1_jjgbg"]
-[ext_resource type="Texture2D" uid="uid://s2w53ohc3hmr" path="res://icon.svg" id="2_bo1nx"]
-<<<<<<< Updated upstream
-=======
-[ext_resource type="PackedScene" uid="uid://di0jyx45h0yq6" path="res://object/pizza.tscn" id="3_8gbba"]
->>>>>>> Stashed changes
+[ext_resource type="PackedScene" uid="uid://4v88fg330m1t" path="res://Player/player.tscn" id="1_player"]
+[ext_resource type="Texture2D" uid="uid://s2w53ohc3hmr" path="res://icon.svg" id="2_icon"]
+[ext_resource type="PackedScene" uid="uid://b7g5jxpgntm1g" path="res://object/pizza.tscn" id="4_pizza"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo1nx"]
-size = Vector2(3643, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
+size = Vector2(1291, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gbba"]
-size = Vector2(131, 133)
+size = Vector2(127, 137)
 
-[node name="Main" type="Node" unique_id=1650700651]
+[node name="Main" type="Node2D" unique_id=1842190480]
 
-[node name="Player" parent="." unique_id=1726213955 instance=ExtResource("1_jjgbg")]
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1283248824]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1238008177]
+position = Vector2(678.5, 617)
+shape = SubResource("RectangleShape2D_ground")
+
+[node name="Player" parent="Ground" unique_id=1007574831 instance=ExtResource("1_player")]
 position = Vector2(714, 482)
 
-[node name="Ground" type="StaticBody2D" parent="." unique_id=887674923]
-position = Vector2(420, 0)
+[node name="Block" type="Sprite2D" parent="." unique_id=1682495161]
+position = Vector2(917, 539)
+texture = ExtResource("2_icon")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1691628412]
-position = Vector2(678.5, 617)
-shape = SubResource("RectangleShape2D_bo1nx")
+[node name="StaticBody2D" type="StaticBody2D" parent="Block" unique_id=1174421907]
 
-<<<<<<< Updated upstream
-[node name="Player" parent="Ground" unique_id=1726213955 instance=ExtResource("1_jjgbg")]
-position = Vector2(726, 198)
-
-=======
->>>>>>> Stashed changes
-[node name="Icon" type="Sprite2D" parent="." unique_id=69532769]
-position = Vector2(1138, 540)
-texture = ExtResource("2_bo1nx")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Icon" unique_id=792338447]
-position = Vector2(-497, -539)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/StaticBody2D" unique_id=434257135]
-position = Vector2(497, 542)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block/StaticBody2D" unique_id=1391212182]
+position = Vector2(0.5, 3.5)
 shape = SubResource("RectangleShape2D_8gbba")
-<<<<<<< Updated upstream
-=======
 
-[node name="Pizza" parent="." unique_id=2062678225 instance=ExtResource("3_8gbba")]
-position = Vector2(1101, 273)
->>>>>>> Stashed changes
+[node name="Pizza" parent="." unique_id=1340471663 instance=ExtResource("4_pizza")]
+position = Vector2(843, 265)
