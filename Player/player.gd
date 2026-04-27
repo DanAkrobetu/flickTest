@@ -8,6 +8,20 @@ const maxJumpHeight: float = 1000
 
 var doubleJump: bool = false
 
+<<<<<<< Updated upstream
+=======
+var objectVelocityX
+var objectVelocityY
+
+@onready var holdPointRight = $holdPointRight
+@onready var holdPointLeft = $holdPointLeft
+
+var isHoldingObject: bool = false
+
+var object: RigidBody2D
+
+signal drop_item
+>>>>>>> Stashed changes
 
 func _ready() -> void:
 	velocity = Vector2.ZERO
@@ -27,9 +41,22 @@ func get_input():
 	#print("InputDir:" + str(inputDir))
 	#print("velocity.y:" + str(velocity.y))
 	#print(sign(velocity.y))
+
+
+func detectFlick():
+	var flickInput = Input.get_axis("flickLeft", "flickRight")
 	
+	
+	objectVelocityX = flickInput * maxSpeed
+	var thing = false
+	emit_signal("drop_item")
+
 func detectMovingDown() -> bool:
 	return velocity.y > 0
+
+func _process(delta: float) -> void:
+	if isHoldingObject:
+		object.hold()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -41,5 +68,6 @@ func _physics_process(delta: float) -> void:
 	elif is_on_floor():
 		doubleJump = false
 	get_input()
+	detectFlick()
 
 	move_and_slide()

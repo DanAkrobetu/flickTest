@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://di0jyx45h0yq6"]
+
+[ext_resource type="Script" uid="uid://6qgp5858axdw" path="res://object/pizza.gd" id="1_5im46"]
+[ext_resource type="Texture2D" uid="uid://s2w53ohc3hmr" path="res://icon.svg" id="1_bvql8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5im46"]
+size = Vector2(26, 26)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2gxpy"]
+radius = 48.09366
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=703009555]
+script = ExtResource("1_5im46")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=472377133]
+scale = Vector2(0.20280524, 0.20342578)
+texture = ExtResource("1_bvql8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1790300590]
+shape = SubResource("RectangleShape2D_5im46")
+
+[node name="playerAreaDetection" type="Area2D" parent="." unique_id=406214924]
+
+[node name="detectionShape" type="CollisionShape2D" parent="playerAreaDetection" unique_id=225387056]
+shape = SubResource("CircleShape2D_2gxpy")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[node name="Pizza" type="Node2D" parent="." unique_id=2062678225]
+
+[node name="Cooldown" type="Timer" parent="." unique_id=1151267583]
+wait_time = 0.25
+
+[connection signal="body_entered" from="." to="." method="reenablePickUp"]
+[connection signal="body_entered" from="playerAreaDetection" to="." method="detectPlayer"]
+[connection signal="timeout" from="Cooldown" to="." method="reenablePickUp"]

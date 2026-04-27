@@ -6,10 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
 size = Vector2(128, 127)
 
-[node name="Player" type="CharacterBody2D" unique_id=1726213955]
+[node name="Player" type="CharacterBody2D" unique_id=1726213955 groups=["player"]]
 script = ExtResource("1_4ntmi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2049034839]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2049034839 groups=["player"]]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_cvnsp")
 
@@ -19,3 +19,9 @@ texture = ExtResource("1_v0iea")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=395565661]
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
+
+[node name="holdPointRight" type="Marker2D" parent="." unique_id=48971127]
+position = Vector2(84, 0)
+
+[node name="holdPointLeft" type="Marker2D" parent="." unique_id=455894889]
+position = Vector2(-84, 0)
