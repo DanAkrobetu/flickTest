@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://di0jyx45h0yq6"]
+[gd_scene format=3 uid="uid://b7g5jxpgntm1g"]
 
-[ext_resource type="Script" uid="uid://6qgp5858axdw" path="res://object/pizza.gd" id="1_5im46"]
+[ext_resource type="Script" path="res://object/pizza.gd" id="1_5im46"]
 [ext_resource type="Texture2D" uid="uid://s2w53ohc3hmr" path="res://icon.svg" id="1_bvql8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5im46"]

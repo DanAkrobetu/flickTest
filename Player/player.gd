@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const maxSpeed: float = 500
-const maxJumpHeight: float = 1000
+const maxJumpHeight: float = 750
 
 @export var upwardsGravityMultiplier: float = 2.5
 @export var donwardsGravityMultiplier: float = 1.65

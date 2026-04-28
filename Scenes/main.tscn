@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b7g5jxpgntm1g" path="res://object/pizza.tscn" id="4_pizza"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
-size = Vector2(1291, 20)
+size = Vector2(3267, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gbba"]
 size = Vector2(127, 137)
@@ -15,7 +15,7 @@ size = Vector2(127, 137)
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1283248824]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=1238008177]
-position = Vector2(678.5, 617)
+position = Vector2(578.5, 599)
 shape = SubResource("RectangleShape2D_ground")
 
 [node name="Player" parent="Ground" unique_id=1007574831 instance=ExtResource("1_player")]
