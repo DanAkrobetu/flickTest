@@ -17,7 +17,27 @@ Glad you asked. The right thumbstick is in charge of controlling whatever item w
 # How will the flick be utilized?
 The flick turns whatever object you weild into a projectile. From there, you could throw things at other things. Enemies, buttons, puzzles, you name it.
 
-*Note: In the future, the flick may not be limitied to just throwing things. More info on that soon to come.*
+⚠️ *Note: In the future, the flick may not be limitied to just throwing things. More info on that soon to come.*
+
+## Controls
+
+### Basic movement:
+1. Move left - "W" key, Left arrow key, left axis on left joystick
+2. Move right - "D" key, right arrow key, right axis on left joystick
+3. Jump - "A" key, up arrow key, A/Triangle button (Or bottom button equivilant) on controller
+
+### The flick controls:
+
+1. Flick object left - left axis on right joystick
+2. Flick object right - right axis on right joystick
+
+#### ⚠️ *Notes*:
+*In the future, support for flicking with mouse will be added for users without a controller.*
+
+*In the future, more directions to throw will be added*
+
+*In the future, the flick may have a throwing gage added. Essentially, this should show you your trajectory of your throw. But, this would likeley be implemented with the controls now being inverted as if you were slingshotting.*
+
 
 As of now (v0.0.0-beta pre release as of writing this), there isnt much to show other than the flick itself. A map will soon be created with things to do within it where you can properly test this mechanic to your heart's disire.
 
