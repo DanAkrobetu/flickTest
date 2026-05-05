@@ -38,8 +38,7 @@ The flick turns whatever object you weild into a projectile. From there, you cou
 
 *In the future, the flick may have a throwing gage added. Essentially, this should show you your trajectory of your throw. But, this would likeley be implemented with the controls now being inverted as if you were slingshotting.*
 
-
-As of now (v0.0.0-beta pre release as of writing this), there isnt much to show other than the flick itself. A map will soon be created with things to do within it where you can properly test this mechanic to your heart's disire.
+*As of now (v0.0.0-beta pre release as of writing this), there isnt much to show other than the flick itself. A map will soon be created with things to do within it where you can properly test this mechanic to your heart's disire.*
 
 ## How can I demo this idea?
 
