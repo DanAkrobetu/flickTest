@@ -1,13 +1,25 @@
 [gd_scene format=3 uid="uid://c7sxciosjylf8"]
 
-[ext_resource type="Script" uid="uid://qfulcequd3ik" path="res://object/object.gd" id="1_ky0tg"]
 [ext_resource type="Texture2D" uid="uid://s2w53ohc3hmr" path="res://icon.svg" id="2_m5e0k"]
+
+[sub_resource type="GDScript" id="GDScript_uxect"]
+script/source = "extends Node
+class_name ObjectLogic
+
+@export var gravity: float = 1000.0
+
+var velocityX: float = 0.0
+var velocityY: float = 0.0
+
+func _ready() -> void:
+	$Sprite.modulate = Color(1, 0, 0) # Tint red
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ky0tg"]
 size = Vector2(117, 67)
 
 [node name="object" type="Node" unique_id=184995101]
-script = ExtResource("1_ky0tg")
+script = SubResource("GDScript_uxect")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1030567153]
 scale = Vector2(0.20280524, 0.20342578)

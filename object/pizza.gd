@@ -6,11 +6,12 @@ var theWorld: Node
 @export var freezeModeSetting: FreezeMode
 
 var allowPickUp: bool = true
+var firstItteration: bool = true
 
-var myMaxSpeed: float = 800.0
+@onready var myMaxSpeed: float = 800.0
 
 @onready var cooldownTimer: Timer = $Cooldown
-const cooldownLength: float = 0.25
+@onready var cooldownLength: float = 0.25
 
 var flickInput = Input.get_axis("flickLeft", "flickRight")
 
@@ -22,7 +23,9 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if isBeingHeld:
-		hold(myParent.holdPointRight)
+		if firstItteration:
+			hold(myParent.holdPointRight)
+			firstItteration = false
 		
 		var flickInput = Input.get_axis("flickLeft", "flickRight")
 		
@@ -30,9 +33,11 @@ func _process(delta: float) -> void:
 			if flickInput < 0:
 				hold(myParent.holdPointLeft)
 				toss(myParent, flickInput)
+				firstItteration = true
 			elif flickInput > 0:
 				hold(myParent.holdPointRight)
 				toss(myParent, flickInput)
+				firstItteration = true
 
 func equip(player: CharacterBody2D) -> void:
 	isBeingHeld = true
@@ -48,6 +53,7 @@ func equip(player: CharacterBody2D) -> void:
 
 func hold(holdPoint: Marker2D) -> void:
 	self.global_position = holdPoint.global_position
+	print("Hold function is currently being executed")
 
 
 func toss(player: CharacterBody2D, direction: float) -> void:
@@ -58,10 +64,10 @@ func toss(player: CharacterBody2D, direction: float) -> void:
 	allowPickUp = false
 
 func release(player: CharacterBody2D) -> void:
-	var global_pos = global_position          # save position BEFORE reparenting
+	var global_pos = global_position
 	#player.remove_child(self)
 	self.reparent(theWorld)
-	global_position = global_pos             # restore position to avoid teleport
+	global_position = global_pos 
 	isBeingHeld = false
 	myParent = null
 	freeze = false
