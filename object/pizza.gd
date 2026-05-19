@@ -23,6 +23,10 @@ func _ready() -> void:
 	contact_monitor = true
 	max_contacts_reported = 20
 	
+	
+func flickReleased(): # Basically a is_action_just_pressed() but for releasing a joystick axis
+	print("Hello, World")
+	
 func _process(delta: float) -> void:
 	var rightStickX: float = Input.get_joy_axis(joystickDevice, JOY_AXIS_RIGHT_X)
 	var rightStickY: float = Input.get_joy_axis(joystickDevice, JOY_AXIS_RIGHT_Y)
@@ -65,12 +69,14 @@ func hold(holdPoint: Marker2D) -> void:
 	# print("Hold function is currently being executed")
 
 var dots: Array[Sprite2D] = []
+var dotOffsetX: float = 5 # This offset is to move dots so they don't appear on top of the object. (for X)
+var dotOffsetY: float = 2 # This offset is to move dots so they don't appear on top of the object. (for Y)
 
 func createDot(x: float, y: float):
 	var new_dot = Sprite2D.new()
 	add_child(new_dot)
 	new_dot.set_texture(dotTexture)
-	new_dot.position = Vector2(x, y)
+	new_dot.position = Vector2(x + dotOffsetX, y - dotOffsetY) # offset applied here instead of within predictTrajectory
 	# If you want the dots to ignore the parent's movement, set top_level on the dot itself:
 	#new_dot.top_level = true 
 	dots.append(new_dot)
@@ -94,9 +100,6 @@ func predictTrajectory():
 		for x in numDots:
 			createDot(rightStickX * spaceBetweenDots * x, input.y * spaceBetweenDots* x)
 			print(x)
-			
-		
-	
 
 func toss(player: CharacterBody2D, directionX: float) -> void:
 	var toss_direction = Vector2(directionX, -0.5).normalized()
