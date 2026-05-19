@@ -53,8 +53,6 @@ func detectFlick():
 func detectMovingDown() -> bool:
 	return velocity.y > 0
 
-# Player.gd , called at _physics_process
-
 
 func _process(_delta: float) -> void:
 	if isHoldingObject:
