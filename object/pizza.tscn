@@ -1,22 +1,23 @@
 [gd_scene format=3 uid="uid://b7g5jxpgntm1g"]
 
-[ext_resource type="Script" path="res://object/pizza.gd" id="1_5im46"]
-[ext_resource type="Texture2D" uid="uid://s2w53ohc3hmr" path="res://icon.svg" id="1_bvql8"]
+[ext_resource type="Script" uid="uid://6qgp5858axdw" path="res://object/pizza.gd" id="1_5im46"]
+[ext_resource type="Texture2D" uid="uid://cjc0sy52y4mvq" path="res://object/stone.png" id="2_5im46"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5im46"]
-size = Vector2(26, 26)
+size = Vector2(2, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2gxpy"]
-radius = 48.09366
+radius = 3.0
 
 [node name="RigidBody2D" type="RigidBody2D" unique_id=703009555]
 script = ExtResource("1_5im46")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=472377133]
 scale = Vector2(0.20280524, 0.20342578)
-texture = ExtResource("1_bvql8")
+texture = ExtResource("2_5im46")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1790300590]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_5im46")
 
 [node name="playerAreaDetection" type="Area2D" parent="." unique_id=406214924]
