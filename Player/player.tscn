@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cl6k1vwou5mvu" path="res://Player/CharacterBetaSpriteSheet.png" id="2_4ntmi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
-size = Vector2(15, 23)
+size = Vector2(18, 23)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_btcbx"]
 atlas = ExtResource("2_4ntmi")
@@ -93,7 +93,7 @@ upwardsGravityMultiplier = 1.5
 donwardsGravityMultiplier = 1.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2049034839 groups=["player"]]
-position = Vector2(1.5, 0.5)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_cvnsp")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=395565661]
@@ -108,5 +108,4 @@ position = Vector2(-11, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1391032452]
 sprite_frames = SubResource("SpriteFrames_5htga")
-animation = &"moveLeft"
-frame_progress = 0.5008934
+animation = &"idle"

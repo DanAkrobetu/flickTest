@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8027eh42vym3"
-path="res://.godot/imported/gageDot.png-aaf847e0205846a92e1505fd82a578d7.ctex"
+uid="uid://cjc0sy52y4mvq"
+path="res://.godot/imported/stone.png-a41c97c6b521f24d8e564e758e4caf3a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gage/gageDot.png"
-dest_files=["res://.godot/imported/gageDot.png-aaf847e0205846a92e1505fd82a578d7.ctex"]
+source_file="res://Pizza/stone.png"
+dest_files=["res://.godot/imported/stone.png-a41c97c6b521f24d8e564e758e4caf3a.ctex"]
 
 [params]
 
