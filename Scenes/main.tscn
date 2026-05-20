@@ -2,32 +2,44 @@
 
 [ext_resource type="Texture2D" uid="uid://bmj4hpsua324g" path="res://blocks/grasstileset1.png" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://4v88fg330m1t" path="res://Player/player.tscn" id="1_player"]
-[ext_resource type="PackedScene" uid="uid://b7g5jxpgntm1g" path="res://object/pizza.tscn" id="4_pizza"]
+[ext_resource type="PackedScene" uid="uid://b7g5jxpgntm1g" path="res://Pizza/pizza.tscn" id="4_pizza"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvhh"]
 texture = ExtResource("1_8gbba")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.075039, -14.07354, 16.10656, -14.0105, 16.138077, 16.02776, -16.012001, 16.122318)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.10656, -14.042021, 16.043522, -13.978981, 16.012001, 16.185358, -16.23264, 16.216879)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.075043, -14.04202, 16.13808, -14.0105, 16.011997, 16.122318, -16.012001, 16.05928)
 3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.023773, -13.993439, 16.048416, -14.01123, 16.04842, 15.986147, -13.00598, 16.02173)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.075037, -13.978981, 16.043518, -14.010501, 16.043522, 16.0908, -16.012001, 15.996241)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.030626, -13.993439, 13.041565, -13.993439, 13.005981, 16.02173, -16.030628, 16.02173)
 3:1/0 = 0
 4:1/0 = 0
 5:1/0 = 0
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-13.00598, -16.039522, 15.948959, -16.02776, 16.030624, 16.003939, -13.005981, 16.003939)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.223251, -16.272717, 16.322174, -16.173796, 16.025406, 16.569485, -16.421097, 16.37164)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.223257, -16.025414, 13.017628, -15.996241, 12.9861145, 16.05928, -16.025412, 16.124334)
 3:2/0 = 0
 4:2/0 = 0
 5:2/0 = 0
 0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.138077, -16.02776, 15.885925, -16.02776, 16.043518, 16.18536, -15.98048, 15.964721)
 1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.075039, -15.933202, 15.885918, -16.027761, 16.043518, 14.10506, -15.98048, 14.0105)
 2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.98048, -16.02776, 15.980476, -16.02776, 15.980484, 16.0908, -16.043518, 16.02776)
 3:3/0 = 0
 4:3/0 = 0
 5:3/0 = 0
@@ -48,29 +60,44 @@ texture_region_size = Vector2i(32, 32)
 2:6/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_kry3j"]
+physics_layer_0/collision_layer = 0
 sources/0 = SubResource("TileSetAtlasSource_jjvhh")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_21xkr"]
-size = Vector2(121, 36)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bp64"]
-size = Vector2(848, 30)
+size = Vector2(976, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21xkr"]
+size = Vector2(121, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gbba"]
+size = Vector2(125, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
+size = Vector2(96, 30)
 
 [node name="Main" type="Node2D" unique_id=1842190480]
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1283248824]
 
-[node name="grass" type="TileMapLayer" parent="Ground" unique_id=1622023922]
-tile_map_data = PackedByteArray("AAAsACEAAAACAAAAAAAuACEAAAACAAYAAAAuAB8AAAAAAAEAAAAwAB8AAAABAAEAAAAyAB8AAAABAAEAAAA0AB8AAAACAAEAAAA0ACEAAAAAAAYAAAAyACEAAAABAAIAAAAwACEAAAABAAIAAAAqACEAAAABAAEAAAAoACEAAAABAAEAAAAmACEAAAABAAAAAAAkACEAAAABAAAAAAAiACEAAAABAAAAAAAgACEAAAABAAAAAAAeACEAAAABAAAAAAAcACEAAAABAAAAAAAaACEAAAABAAAAAAAYACEAAAABAAAAAAAWACEAAAABAAAAAAAUACEAAAABAAAAAAASACEAAAABAAAAAAARACEAAAABAAAAAAAQACEAAAABAAAAAAAPACEAAAABAAAAAAAOACEAAAABAAAAAAANACEAAAABAAAAAAAMACEAAAABAAAAAAALACEAAAABAAAAAAAKACEAAAABAAAAAAAJACEAAAABAAAAAAAIACEAAAABAAAAAAAHACEAAAABAAAAAAAGACEAAAABAAAAAAAFACEAAAABAAAAAAA2ACEAAAABAAAAAAA4ACEAAAABAAAAAAA=")
+[node name="grass" type="TileMapLayer" parent="Ground" unique_id=739793102]
+tile_map_data = PackedByteArray("AAAsACEAAAACAAAAAAAuACEAAAACAAYAAAAuAB8AAAAAAAEAAAAwAB8AAAABAAEAAAAyAB8AAAABAAEAAAA0AB8AAAACAAEAAAA0ACEAAAAAAAYAAAAyACEAAAABAAIAAAAwACEAAAABAAIAAAAqACEAAAABAAEAAAAoACEAAAABAAEAAAAmACEAAAABAAAAAAAkACEAAAABAAAAAAAiACEAAAABAAAAAAAgACEAAAABAAAAAAAeACEAAAABAAAAAAAcACEAAAABAAAAAAAaACEAAAABAAAAAAAYACEAAAABAAAAAAAWACEAAAABAAAAAAAUACEAAAABAAAAAAASACEAAAABAAAAAAARACEAAAABAAAAAAAQACEAAAABAAAAAAAPACEAAAABAAAAAAAOACEAAAABAAAAAAANACEAAAABAAAAAAAMACEAAAABAAAAAAALACEAAAABAAAAAAAKACEAAAABAAAAAAAJACEAAAABAAAAAAAIACEAAAABAAAAAAAHACEAAAABAAAAAAAGACEAAAABAAAAAAAFACEAAAABAAAAAAA2ACEAAAABAAAAAAA4ACEAAAABAAAAAAA6ACEAAAACAAYAAAA6AB8AAAACAAUAAAA6AB0AAAACAAUAAAA6ABsAAAAAAAEAAAA8ABsAAAABAAEAAAA+ABsAAAABAAEAAABAABsAAAABAAEAAAA8AB0AAAABAAIAAABAAB0AAAABAAIAAAA+AB0AAAABAAIAAAA8AB8AAAABAAIAAAA+AB8AAAABAAIAAABAAB8AAAABAAIAAABAACEAAAABAAIAAAA+ACEAAAABAAIAAAA8ACEAAAABAAIAAAAiABsAAAABAAEAAAAgABsAAAABAAEAAAAeABsAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_kry3j")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=492799031]
+position = Vector2(560, 537)
+shape = SubResource("RectangleShape2D_6bp64")
+
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground" unique_id=1168680669]
-position = Vector2(791.5, 508)
+position = Vector2(791.5, 506)
 shape = SubResource("RectangleShape2D_21xkr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=492799031]
-position = Vector2(496, 537)
-shape = SubResource("RectangleShape2D_6bp64")
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground" unique_id=732514981]
+position = Vector2(985, 474)
+shape = SubResource("RectangleShape2D_8gbba")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Ground" unique_id=1840341347]
+position = Vector2(520, 441)
+shape = SubResource("RectangleShape2D_jjvhh")
 
 [node name="Pizza" parent="." unique_id=1340471663 instance=ExtResource("4_pizza")]
 position = Vector2(843, 265)

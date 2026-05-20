@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b7g5jxpgntm1g"]
 
-[ext_resource type="Script" uid="uid://6qgp5858axdw" path="res://object/pizza.gd" id="1_5im46"]
-[ext_resource type="Texture2D" uid="uid://cjc0sy52y4mvq" path="res://object/stone.png" id="2_5im46"]
+[ext_resource type="Script" uid="uid://6qgp5858axdw" path="res://Pizza/pizza.gd" id="1_5im46"]
+[ext_resource type="Texture2D" uid="uid://cjc0sy52y4mvq" path="res://Pizza/stone.png" id="2_5im46"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5im46"]
 size = Vector2(2, 1)
