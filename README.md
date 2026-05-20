@@ -6,7 +6,8 @@ This project strives to do so, using not only the left thumbstick for movement, 
 This project is made in Godot and coded with GDScript.
 
 ![Example of the flick at play](readmegifs/demo.gif)
-Example of the flick at play in v0.0.0 Beta
+
+Example of the flick at play in v0.1.0 Beta
 
 ## How does the flick work?
 Glad you asked. The right thumbstick is in charge of controlling whatever item within the game you are holding. When an item is equipped, you have the ability to throw the item at any time by *flicking* the right thumbstick in that direction.
