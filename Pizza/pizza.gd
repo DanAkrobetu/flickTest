@@ -15,7 +15,7 @@ var firstItteration: bool = true
 
 var flickInput = Input.get_axis("flickLeft", "flickRight")
 
-var dotTexture = load("res://gage/gageDot.png")
+var dotTexture = load("res://Pizza/gage/gageDot.png")
 
 var joystickDevice: int = 0
 
@@ -77,7 +77,6 @@ func createDot(x: float, y: float):
 	add_child(new_dot)
 	new_dot.set_texture(dotTexture)
 	new_dot.position = Vector2(x + dotOffsetX, y - dotOffsetY) # offset applied here instead of within predictTrajectory
-	# If you want the dots to ignore the parent's movement, set top_level on the dot itself:
 	#new_dot.top_level = true 
 	dots.append(new_dot)
 	
@@ -89,6 +88,10 @@ func deleteDots():
 var deadzone: float = 0.1
 var spaceBetweenDots: float = 25.0
 
+#var gravity = get_gravity()
+#var time
+
+
 func predictTrajectory():
 	deleteDots()
 	var rightStickX: float = Input.get_joy_axis(joystickDevice, JOY_AXIS_RIGHT_X)
@@ -99,7 +102,7 @@ func predictTrajectory():
 	if abs(input.x) > deadzone or abs(input.y) > deadzone:
 		for x in numDots:
 			createDot(rightStickX * spaceBetweenDots * x, input.y * spaceBetweenDots* x)
-			print(x)
+			#print(x)
 
 func toss(player: CharacterBody2D, directionX: float) -> void:
 	var toss_direction = Vector2(directionX, -0.5).normalized()

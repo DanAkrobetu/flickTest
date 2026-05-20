@@ -44,8 +44,6 @@ func get_input():
 
 func detectFlick():
 	var flickInput = Input.get_axis("flickLeft", "flickRight")
-	
-	
 	objectVelocityX = flickInput * maxSpeed
 	var _thing = false
 	emit_signal("drop_item")
