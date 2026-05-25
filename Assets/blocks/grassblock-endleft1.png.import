@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjc0sy52y4mvq"
-path="res://.godot/imported/stone.png-a41c97c6b521f24d8e564e758e4caf3a.ctex"
+uid="uid://0abq2tyv2r0p"
+path="res://.godot/imported/grassblock-endleft1.png-9b4024c4c87df40595f7d7fa926201c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pizza/stone.png"
-dest_files=["res://.godot/imported/stone.png-a41c97c6b521f24d8e564e758e4caf3a.ctex"]
+source_file="res://Assets/blocks/grassblock-endleft1.png"
+dest_files=["res://.godot/imported/grassblock-endleft1.png-9b4024c4c87df40595f7d7fa926201c3.ctex"]
 
 [params]
 

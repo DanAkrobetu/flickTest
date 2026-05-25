@@ -8,7 +8,6 @@ extends CharacterBody2D
 
 var doubleJump: bool = false
 
-
 var objectVelocityX
 var objectVelocityY
 
@@ -18,8 +17,6 @@ var objectVelocityY
 var isHoldingObject: bool = false
 
 var object: RigidBody2D
-
-signal drop_item
 
 
 func _ready() -> void:
@@ -41,16 +38,8 @@ func get_input():
 	#print("velocity.y:" + str(velocity.y))
 	#print(sign(velocity.y))
 
-
-func detectFlick():
-	var flickInput = Input.get_axis("flickLeft", "flickRight")
-	objectVelocityX = flickInput * maxSpeed
-	var _thing = false
-	emit_signal("drop_item")
-
 func detectMovingDown() -> bool:
 	return velocity.y > 0
-
 
 func _process(_delta: float) -> void:
 	if isHoldingObject:
@@ -65,6 +54,4 @@ func _physics_process(delta: float) -> void:
 	elif is_on_floor():
 		doubleJump = false
 	get_input()
-	detectFlick()
-
 	move_and_slide()

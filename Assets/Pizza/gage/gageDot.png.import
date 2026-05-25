@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwcjou7hm46d8"
-path="res://.godot/imported/grassblock-center1.png-45b6bc52e66dafc45cdb6b4f53dce889.ctex"
+uid="uid://b8027eh42vym3"
+path="res://.godot/imported/gageDot.png-bd11e449db1a2d11181e730875e638fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://blocks/grassblock-center1.png"
-dest_files=["res://.godot/imported/grassblock-center1.png-45b6bc52e66dafc45cdb6b4f53dce889.ctex"]
+source_file="res://Assets/Pizza/gage/gageDot.png"
+dest_files=["res://.godot/imported/gageDot.png-bd11e449db1a2d11181e730875e638fd.ctex"]
 
 [params]
 

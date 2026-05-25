@@ -15,7 +15,7 @@ var firstItteration: bool = true
 
 var flickInput = Input.get_axis("flickLeft", "flickRight")
 
-var dotTexture = load("res://Pizza/gage/gageDot.png")
+var dotTexture = load("res://Assets/Pizza/gage/gageDot.png")
 
 var joystickDevice: int = 0
 
@@ -41,15 +41,16 @@ func _process(delta: float) -> void:
 		
 		var flickInput = Input.get_axis("flickLeft", "flickRight")
 		
-		if (abs(input.x) > 0.1 or abs(input.y) > 0.1) and Input.is_action_just_pressed("comfirmThrow"):
+		if (abs(input.x) > 0.1 or abs(input.y) > 0.1):
 			if flickInput < 0:
 				hold(myParent.holdPointLeft)
 			elif flickInput > 0:
 				hold(myParent.holdPointRight)
-			#toss(myParent, flickInput)
-			toss2(myParent, input)
-			firstItteration = true
-			deleteDots()
+			
+			if Input.is_action_just_pressed("comfirmThrow"):
+				toss2(myParent, input)
+				firstItteration = true
+				deleteDots()
 
 func equip(player: CharacterBody2D) -> void:
 	isBeingHeld = true
@@ -69,14 +70,12 @@ func hold(holdPoint: Marker2D) -> void:
 	# print("Hold function is currently being executed")
 
 var dots: Array[Sprite2D] = []
-var dotOffsetX: float = 5 # This offset is to move dots so they don't appear on top of the object. (for X)
-var dotOffsetY: float = 2 # This offset is to move dots so they don't appear on top of the object. (for Y)
 
 func createDot(x: float, y: float):
 	var new_dot = Sprite2D.new()
 	add_child(new_dot)
 	new_dot.set_texture(dotTexture)
-	new_dot.position = Vector2(x + dotOffsetX, y - dotOffsetY) # offset applied here instead of within predictTrajectory
+	new_dot.position = Vector2(x, y)
 	#new_dot.top_level = true 
 	dots.append(new_dot)
 	
@@ -91,7 +90,6 @@ var spaceBetweenDots: float = 25.0
 #var gravity = get_gravity()
 #var time
 
-
 func predictTrajectory():
 	deleteDots()
 	var rightStickX: float = Input.get_joy_axis(joystickDevice, JOY_AXIS_RIGHT_X)
@@ -101,8 +99,7 @@ func predictTrajectory():
 	var numDots: int = 6
 	if abs(input.x) > deadzone or abs(input.y) > deadzone:
 		for x in numDots:
-			createDot(rightStickX * spaceBetweenDots * x, input.y * spaceBetweenDots* x)
-			#print(x)
+			createDot(rightStickX * spaceBetweenDots * (x + .5), input.y * spaceBetweenDots* (x + .5))
 
 func toss(player: CharacterBody2D, directionX: float) -> void:
 	var toss_direction = Vector2(directionX, -0.5).normalized()
@@ -110,15 +107,14 @@ func toss(player: CharacterBody2D, directionX: float) -> void:
 	linear_velocity = toss_direction * myMaxSpeed
 	cooldownTimer.start(cooldownLength)
 	allowPickUp = false
-	
+
 func toss2(player: CharacterBody2D, direction: Vector2):
 	var toss_direction = Vector2(direction.x, direction.y).normalized()
 	release(player)
 	linear_velocity = toss_direction * myMaxSpeed
 	cooldownTimer.start(cooldownLength)
 	allowPickUp = false
-	
-	
+
 func release(player: CharacterBody2D) -> void:
 	var global_pos = global_position
 	#player.remove_child(self)
@@ -131,7 +127,6 @@ func release(player: CharacterBody2D) -> void:
 
 func detectPlayer(body: Node2D) -> void:
 	if body.is_in_group("player") and allowPickUp:
-		print("player")
 		equip(body)
 		allowPickUp = false
 

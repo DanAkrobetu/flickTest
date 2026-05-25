@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://b3m83mtqrxyoe"]
 
-[ext_resource type="Texture2D" uid="uid://bmj4hpsua324g" path="res://blocks/grasstileset1.png" id="1_8gbba"]
-[ext_resource type="PackedScene" uid="uid://4v88fg330m1t" path="res://Player/player.tscn" id="1_player"]
-[ext_resource type="PackedScene" uid="uid://b7g5jxpgntm1g" path="res://Pizza/pizza.tscn" id="4_pizza"]
+[ext_resource type="Texture2D" uid="uid://bmj4hpsua324g" path="res://Assets/blocks/grasstileset1.png" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://4v88fg330m1t" path="res://Assets/Player/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" uid="uid://b7g5jxpgntm1g" path="res://Assets/Pizza/pizza.tscn" id="4_pizza"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvhh"]
 texture = ExtResource("1_8gbba")
