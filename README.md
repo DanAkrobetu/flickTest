@@ -7,7 +7,7 @@ This project is made in Godot and coded with GDScript.
 
 ![Example of the flick at play](readmegifs/demo.gif)
 
-Example of the flick at play in v0.1.0 Beta
+Example of the flick at play in v1.0.0
 
 ## How does the flick work?
 Glad you asked. The right thumbstick is in charge of controlling whatever item within the game you are holding. When an item is equipped, you have the ability to throw the item at any time by *flicking* the right thumbstick in that direction.
@@ -25,21 +25,18 @@ The flick turns whatever object you weild into a projectile. From there, you cou
 ### Basic movement:
 1. Move left - "W" key, Left arrow key, left axis on left joystick
 2. Move right - "D" key, right arrow key, right axis on left joystick
-3. Jump - "A" key, up arrow key, A/Triangle button (Or bottom button equivilant) on controller
+3. Jump - "A" key, up arrow key, up axis on left thumbstick, A/Triangle button (Or bottom button equivilant) on controller
 
 ### The flick controls:
 
-1. Flick object left - left axis on right joystick
-2. Flick object right - right axis on right joystick
+Use the right thumbstick to gage your throw. When you're ready, hit the right trigger to release.
 
 #### ⚠️ *Notes*:
 *In the future, support for flicking with mouse will be added for users without a controller.*
 
-*In the future, more directions to throw will be added*
+*Enemies will be added into the game in a minor release to test the object on.*
 
-*In the future, the flick may have a throwing gage added. Essentially, this should show you your trajectory of your throw. But, this would likeley be implemented with the controls now being inverted as if you were slingshotting.*
-
-*As of now (v0.0.0-beta pre release as of writing this), there isnt much to show other than the flick itself. A map will soon be created with things to do within it where you can properly test this mechanic to your heart's disire.*
+*The gage will be fixed to show the true trajectory of the throw*
 
 ## How can I demo this idea?
 
