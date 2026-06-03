@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://y7e72yojv8tt"]
+
+[ext_resource type="Script" uid="uid://dwswgg8pvspx3" path="res://Assets/Enemy/enemy.gd" id="1_38mpv"]
+[ext_resource type="Texture2D" uid="uid://s2w53ohc3hmr" path="res://icon.svg" id="1_c3fr5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_38mpv"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3fr5"]
+size = Vector2(12, 12)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1527016690]
+script = ExtResource("1_38mpv")
+
+[node name="Timer" type="Timer" parent="." unique_id=592399553]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=223236868]
+position = Vector2(0, -1)
+scale = Vector2(0.09375, 0.09375)
+texture = ExtResource("1_c3fr5")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1055616762]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=436822926]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_38mpv")
+debug_color = Color(0.95333666, 0.07742482, 0.5098131, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=325867975]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_c3fr5")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

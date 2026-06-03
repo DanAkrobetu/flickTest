@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bmj4hpsua324g" path="res://Assets/blocks/grasstileset1.png" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://4v88fg330m1t" path="res://Assets/Player/player.tscn" id="1_player"]
+[ext_resource type="PackedScene" uid="uid://y7e72yojv8tt" path="res://Assets/Enemy/enemy.tscn" id="4_guoxd"]
 [ext_resource type="PackedScene" uid="uid://b7g5jxpgntm1g" path="res://Assets/Pizza/pizza.tscn" id="4_pizza"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvhh"]
@@ -104,3 +105,6 @@ position = Vector2(843, 265)
 
 [node name="Player" parent="." unique_id=1007574831 instance=ExtResource("1_player")]
 position = Vector2(714, 482)
+
+[node name="Enemy" parent="." unique_id=1013170532 instance=ExtResource("4_guoxd")]
+position = Vector2(617, 504)
