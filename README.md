@@ -5,7 +5,7 @@ This project strives to do so, using not only the left thumbstick for movement, 
 
 This project is made in Godot and coded with GDScript.
 
-![Example of the flick at play](readmegifs/demo.gif)
+![Example of the flick at play](readmegifs/demogif.gif)
 
 Example of the flick at play in v1.1.0
 
